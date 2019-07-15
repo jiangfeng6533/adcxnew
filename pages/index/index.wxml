@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">货品管理</view>
+</cu-custom>
+
+
+<view class="cu-form-group">
+  <view class="title">输入框</view>
+  <input placeholder="{{name}}"></input>
+</view>
+<view class="cu-form-group margin-top">
+  <view class="title">普通选择</view>
+  <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+    <view class="picker">
+      {{index?picker[index]:'禁止换行，超出容器部分会以 ... 方式截断'}}
+    </view>
+  </picker>
+</view>
