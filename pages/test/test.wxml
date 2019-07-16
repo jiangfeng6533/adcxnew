@@ -1,2 +1,32 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<cu-custom bgColor="bg-gradual-blue">
+  <view slot="content">爱的出行</view>
+
+</cu-custom>
+<view class="ub ub-f1 ub ub-ver" style="height:100%;width:100%">
+<view class="cu-form-group">
+  <view class="title">起点</view>
+  <input placeholder="位置"></input>
+</view>
+<view class="cu-form-group">
+  <view class="title">终点</view>
+  <input placeholder="位置"></input>
+</view>
+
+    <map
+      id="myMap"
+      
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      show-location
+      style="width: 100%; height:auto;"
+      
+    >
+    <cover-view class='ub-ac' style=" position: absolute; bottom: 100rpx; left: 10%;display: flex; ">
+     立即约车
+    </cover-view>
+    </map>
+
+</view>

@@ -11,8 +11,11 @@ Page({
     StatusBar: app.globalData.StatusBar,
     CustomBar: app.globalData.CustomBar,
     ColorList: app.globalData.ColorList,
-    picker:["同房","dasha","d12212"],
-    name:'jiang'
+    index: null,
+    picker: ['喵喵喵', '汪汪汪', '哼唧哼唧'],
+    isbaoche:false
+   
+    
   },
   //事件处理函数
   bindViewTap: function() {
@@ -20,7 +23,14 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (e) {
+    console.log('index初始值',e);
+    var start = e.start;
+    var end  = e.end;
+    this.setData({
+      start:start,
+      end:end
+    })
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -72,5 +82,15 @@ Page({
   },
   nihao(){
     console.log("这是调用你好");
+  },
+  baoche(){
+    this.setData({
+      isbaoche:true
+    })
+  },
+  hideModal(){
+    this.setData({
+      isbaoche: false
+    })
   }
 })

@@ -19,3 +19,9 @@
 .usermotto {
   margin-top: 200px;
 }
+.footer{
+  position: fixed;
+  bottom: 0rpx;
+  width: 95%;
+  background: white;
+}

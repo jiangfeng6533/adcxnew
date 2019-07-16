@@ -1,4 +1,4 @@
-// pages/foot/foot.js
+// pages/test/test/add.js
 Page({
 
   /**

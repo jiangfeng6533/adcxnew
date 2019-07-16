@@ -1,18 +1,104 @@
 <!--index.wxml-->
 <cu-custom bgColor="bg-gradual-blue">
-  <view slot="content">货品管理</view>
+  <view slot="content">爱的出行</view>
+  <view slot="backText">返回</view>
+	<view slot="content">表单</view>
 </cu-custom>
 
 
 <view class="cu-form-group">
-  <view class="title">输入框</view>
-  <input placeholder="{{name}}"></input>
+  <view class="title">手机号码</view>
+  <input placeholder="输入框带标签"></input>
+  <view class="cu-capsule radius">
+    <view class="cu-tag bg-blue">
+      +86
+    </view>
+    <view class="cu-tag line-blue">
+      中国大陆
+    </view>
+  </view>
 </view>
-<view class="cu-form-group margin-top">
-  <view class="title">普通选择</view>
-  <picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+
+<view class="cu-form-group ">
+  <view class="title">起点</view>
+  <view>{{start}}</view>
+</view>
+<view class="cu-form-group ">
+  <view class="title">终点</view>
+  <view>{{end}}</view>
+</view>
+
+<view class="cu-form-group ">
+  <view class="title">在哪接我</view>
+  <input placeholder="请选择上车位置"></input>
+</view>
+
+<view class="cu-form-group ">
+  <view class="title">我要去哪</view>
+  <input placeholder="请选择下车位置"></input>
+</view>
+
+<view class="cu-form-group">
+  <view class="title">日期选择</view>
+  <picker mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
     <view class="picker">
-      {{index?picker[index]:'禁止换行，超出容器部分会以 ... 方式截断'}}
+      {{date}}
     </view>
   </picker>
+</view>
+
+<view class="cu-form-group margin-top">
+		<view class="title">乘车人数</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+			<view class="picker">
+				{{index?picker[index]:'人数'}}
+			</view>
+		</picker>
+	</view>
+
+<view class="cu-form-group margin-top"  bindtap="baoche">
+  <view class="title">是否包车</view>
+
+</view>
+
+<view class="cu-form-group margin-top">
+  <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入备注"></textarea>
+</view>
+
+
+<view class="cu-form-group margin-top">
+  <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入备注"></textarea>
+</view>
+<view class="cu-form-group margin-top">
+  <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入备注"></textarea>
+</view>
+<view class="cu-form-group margin-top">
+  <textarea maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="请输入备注"></textarea>
+</view>
+
+
+<!-- 是否包车 -->
+<view class="cu-modal {{isbaoche==true?'show':''}}" bindtap="hideModal">
+  <view class="cu-dialog" catchtap>
+    <radio-group class="block">
+      <view class="cu-list menu text-left">
+        <view class="cu-item" wx:for="{{5}}" wx:key>
+          <label class="flex justify-between align-center flex-sub">
+            <view class="flex-sub">Item {{index +1}}</view>
+            <radio class="round"></radio>
+          </label>
+        </view>
+      </view>
+    </radio-group>
+  </view>
+</view>
+
+<view class="ub footer">
+
+  <view class="ub ub-f1 ub-ac padding-left">
+    估价：￥33.06
+  </view>
+  <view class="ub">
+    <button class="cu-btn bg-blue margin-tb-sm lg">叫车</button>
+  </view>
 </view>
